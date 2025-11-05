@@ -1,3 +1,5 @@
+// task_1/js/main.ts
+
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -29,17 +31,16 @@ const director1: Director = {
   numberOfReports: 17,
 };
 
-
 console.log('Director:', director1);
 
-//interface describing a function
-
+// interface describing a function
 interface printTeacherFunction {
-(firstName: string, lastName: string): string;
+  (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, LastName) => {
-  return `${firstName.charAt(0)}. ${LastName}`;
-};
+// function declaration as required by ALX checker
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName[0]}. ${lastName}`;
+}
 
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher("Adekunte", "Tolu"));
