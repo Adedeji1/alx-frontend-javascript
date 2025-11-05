@@ -28,3 +28,6 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
+
+
+console.log('Director:', director1);
