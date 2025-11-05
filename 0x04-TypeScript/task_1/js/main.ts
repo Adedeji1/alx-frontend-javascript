@@ -1,5 +1,3 @@
-
-
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -23,7 +21,7 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-const director1: Directors = {
+const director1: Director = {
   firstName: 'Adekunte',
   lastName: 'Tolulope',
   location: 'Abuja',
@@ -33,3 +31,15 @@ const director1: Directors = {
 
 
 console.log('Director:', director1);
+
+//interface describing a function
+
+interface printTeacherFunction {
+(firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, LastName) => {
+  return `${firstName.charAt(0)}. ${LastName}`;
+};
+
+console.log(printTeacher("John", "Doe"));
