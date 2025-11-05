@@ -1,6 +1,4 @@
-interface Directors extends Teacher {
-  numberOfReports: number;
-}
+
 
 interface Teacher {
   readonly firstName: string;
@@ -9,6 +7,10 @@ interface Teacher {
   yearsOfExperience?: number;
   location: string;
   [key: string]: any;
+}
+
+interface Directors extends Teacher {
+  numberOfReports: number;
 }
 
 const teacher3: Teacher = {
