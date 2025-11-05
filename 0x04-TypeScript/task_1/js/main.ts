@@ -33,14 +33,40 @@ const director1: Director = {
 
 console.log('Director:', director1);
 
-// interface describing a function
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// ✅ Function written exactly as checker expects
 function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
   return `${firstName}. ${lastName}`;
 }
 
 console.log(printTeacher({ firstName: "Adekunte", lastName: "Tolu" }));
+
+
+// Interface describing the class instance
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+
+class StudentClass implements StudentClassInterface {
+  constructor(public firstName: string, public lastName: string) {}
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+const student1 = new StudentClass("David", "Ola");
+console.log(student1.displayName());
+console.log(student1.workOnHomework());
