@@ -1,6 +1,6 @@
 interface Teacher {
-  firstName: string;
-  lastName: string;
+  readonly firstName: string;
+  readonly lastName: string;
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
@@ -8,10 +8,10 @@ interface Teacher {
 }
 
 const teacher3: Teacher = {
-  firstName: 'John',
+  firstName: 'Adedeji',
   fullTimeEmployee: false,
-  lastName: 'Doe',
-  location: 'London',
+  lastName: 'Afolabi',
+  location: 'Ibadan',
   contract: false,
 };
 
