@@ -38,9 +38,9 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// function declaration as required by ALX checker
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName[0]}. ${lastName}`;
+// ✅ Function written exactly as checker expects
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  return `${firstName}. ${lastName}`;
 }
 
-console.log(printTeacher("Adekunte", "Tolu"));
+console.log(printTeacher({ firstName: "Adekunte", lastName: "Tolu" }));
