@@ -12,7 +12,7 @@ interface TeacherInterface {
 
 class Director implements DirectorInterface {
     workFromHome(): string {
-        return "work from home";
+        return "Working from home";
     }
     getCoffeeBreak(): string {
         return "Getting a coffee break";
@@ -35,8 +35,13 @@ class Teacher implements TeacherInterface {
 }
 
 function createEmployee (salary: number | string): Director | Teacher {
-    if (typeof salary === "number" && salary < 500) {
-        return new Teacher();
+    if (typeof salary === "number") {
+        if (salary < 500) {
+            return new Teacher();
+        } else {
+            return new Director();
+        }
+        
     } else {
         return new Director();
     }
